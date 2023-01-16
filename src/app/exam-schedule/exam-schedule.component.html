@@ -1,0 +1,306 @@
+
+<div class="container crud1">
+    <div class="tableName">
+      <h1>EXAM <span>SCHEDULE</span> </h1>
+      <button type="button" class="btn btn1 btn-primary" (click)="openExamModal(examtemplate,'null')">Add More</button>
+    </div>
+  
+  
+    <!-- *************** Table No. 4 **************** -->
+  
+  
+  <div class="table1">
+    <table class="table table-striped text-center ">
+      <thead>
+        <tr>
+          <th scope="col">Sr.No</th>
+          <th scope="col">Subject</th>
+          <th scope="col">Date</th>
+          <th scope="col">Time Slot</th>
+          <th scope="col">Total Students</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <tr  *ngFor="let exam of examData; let i = index">
+          <th scope="row">{{i + 1}}</th>
+          <td>{{exam.subject}}</td>
+          <td>{{exam.date}}</td>
+          <td>{{exam.time}}</td>
+          <td>{{exam.student}}</td>
+          <td>
+            <button type="button" class="btn btn2  btn-warning"  (click)="openExamModal(editexamtemplate,i)">Edit</button> &nbsp;&nbsp;
+            <button type="button" class="btn btn3  btn-warning"  (click)="DeleteExam(i)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  </div>
+  
+  
+  
+  <!-- ************************************************
+  ************* Exam Template Start  *****************
+  ***************************************************** -->
+  
+  
+  <ng-template #examtemplate>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">ADD EXAM</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="examClose()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+  
+    <div class="tempBody">
+  
+      <div class="modal-body">
+  
+        <div class="mb-3 mt-3">
+          <label for="text" class="form-label  mb-1"><i class='fas fa-address-book' style='font-size:15px'></i> &nbsp; Subject :-</label>
+           <select class="form-select" id="sel" name="sellist"  [(ngModel)]="examSubject">
+            <option value="" disabled selected>Choose subject</option>
+            <option value="Mathematics">Mathematics</option>
+            <option value="Science">Science</option>
+            <option value="Psychology">Psychology</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Environmental Science">Environmental Science</option>
+            <option value="Computer Science">Computer Science</option>
+          </select>
+        </div>
+  
+        <div class="mb-3 mt-3">
+          <label for="text" class="form-label" ><i class='fa fa-calendar' style='font-size:15px'></i> &nbsp; Date :-</label>
+          <input type="date" class="form-control" placeholder="Enter member name"  [(ngModel)]="examDate">
+       </div>
+  
+        <div class="mb-3 mt-3">
+          <label for="text" class="form-label  mb-1"><i class='fas fa-chart-line' style='font-size:15px'></i> &nbsp; Time Slot :-</label>
+           <select class="form-select" id="sel" name="sellist"  [(ngModel)]="examTime">
+            <option value="" disabled selected>Select time</option>
+            <option value="9:30AM to 12:30PM">9:30AM to 12:30PM</option>
+            <option value="2:30PM to 05:30PM">2:30PM to 05:30PM</option>
+          </select>
+        </div>
+  
+  
+        <div class="mb-3 mt-3">
+          <label for="text" class="form-label  mb-1"><i class='fas fa-chart-line' style='font-size:15px'></i> &nbsp; Total Students :-</label>
+           <select class="form-select" id="sel" name="sellist"  [(ngModel)]="examStudent">
+            <option value="" disabled selected>Select student</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">12</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+            <option value="32">32</option>
+            <option value="33">33</option>
+            <option value="34">34</option>
+            <option value="35">35</option>
+            <option value="36">36</option>
+            <option value="37">37</option>
+            <option value="38">38</option>
+            <option value="39">39</option>
+            <option value="40">40</option>
+            <option value="41">41</option>
+            <option value="42">42</option>
+            <option value="43">43</option>
+            <option value="44">44</option>
+            <option value="45">45</option>
+            <option value="46">46</option>
+            <option value="47">47</option>
+            <option value="48">48</option>
+            <option value="49">49</option>
+            <option value="50">50</option>
+            <option value="51">51</option>
+            <option value="52">52</option>
+            <option value="53">53</option>
+            <option value="54">54</option>
+            <option value="55">55</option>
+            <option value="56">56</option>
+            <option value="57">57</option>
+            <option value="58">58</option>
+            <option value="59">59</option>
+            <option value="60">60</option>
+          </select>
+        </div>
+  
+  
+        <div class="mb-4">
+          <button type="button" class="btn btnSubmit"    [disabled]="examSubject == '' "  (click)="submitExam()">Submit</button>
+        </div>
+  
+        <div class="mb-4">
+          <button type="button" class="btn btnReset"   (click)="resetExam()">Reset</button>
+        </div>
+    
+      </div>
+  
+    </div>
+  
+  </ng-template>
+  
+  
+  
+  <!-- ************************************************
+  ************* Edit Exam Template Start  *****************
+  ***************************************************** -->
+  
+  
+  
+  
+  
+  <ng-template #editexamtemplate>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">EDIT EXAM</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="examClose()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+  
+    <div class="tempBody">
+  
+      <div class="modal-body">
+  
+        <div class="mb-3 mt-3">
+          <label for="text" class="form-label  mb-1"><i class='fas fa-address-book' style='font-size:15px'></i> &nbsp; Subject :-</label>
+           <select class="form-select" id="sel" name="sellist"  [(ngModel)]="examSubject">
+            <option value="" disabled selected>Choose subject</option>
+            <option value="Mathematics">Mathematics</option>
+            <option value="Science">Science</option>
+            <option value="Psychology">Psychology</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Environmental Science">Environmental Science</option>
+            <option value="Computer Science">Computer Science</option>
+          </select>
+        </div>
+  
+        <div class="mb-3 mt-3">
+          <label for="text" class="form-label" ><i class='fa fa-calendar' style='font-size:15px'></i> &nbsp; Date :-</label>
+          <input type="date" class="form-control" placeholder="Enter member name"  [(ngModel)]="examDate">
+       </div>
+  
+        <div class="mb-3 mt-3">
+          <label for="text" class="form-label  mb-1"><i class='fas fa-chart-line' style='font-size:15px'></i> &nbsp; Time Slot :-</label>
+           <select class="form-select" id="sel" name="sellist"  [(ngModel)]="examTime">
+            <option value="" disabled selected>Select time</option>
+            <option value="9:30AM to 12:30PM">9:30AM to 12:30PM</option>
+            <option value="2:30PM to 05:30PM">2:30PM to 05:30PM</option>
+          </select>
+        </div>
+  
+  
+        <div class="mb-3 mt-3">
+          <label for="text" class="form-label  mb-1"><i class='fas fa-chart-line' style='font-size:15px'></i> &nbsp; Total Students :-</label>
+           <select class="form-select" id="sel" name="sellist"  [(ngModel)]="examStudent">
+            <option value="" disabled selected>Select student</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">12</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+            <option value="32">32</option>
+            <option value="33">33</option>
+            <option value="34">34</option>
+            <option value="35">35</option>
+            <option value="36">36</option>
+            <option value="37">37</option>
+            <option value="38">38</option>
+            <option value="39">39</option>
+            <option value="40">40</option>
+            <option value="41">41</option>
+            <option value="42">42</option>
+            <option value="43">43</option>
+            <option value="44">44</option>
+            <option value="45">45</option>
+            <option value="46">46</option>
+            <option value="47">47</option>
+            <option value="48">48</option>
+            <option value="49">49</option>
+            <option value="50">50</option>
+            <option value="51">51</option>
+            <option value="52">52</option>
+            <option value="53">53</option>
+            <option value="54">54</option>
+            <option value="55">55</option>
+            <option value="56">56</option>
+            <option value="57">57</option>
+            <option value="58">58</option>
+            <option value="59">59</option>
+            <option value="60">60</option>
+          </select>
+        </div>
+  
+  
+        <div class="mb-4">
+          <button type="button" class="btn btnSubmit"  [disabled]="examSubject == '' "  (click)="editExam()">Update</button>
+        </div>
+  
+        <div class="mb-4">
+          <button type="button" class="btn btnReset" (click)="resetExam()">Reset</button>
+        </div>
+    
+      </div>
+  
+    </div>
+  
+  </ng-template>
+
+  <div class="tagg" style="width: 86%; margin-left:108px;">
+    <hr>
+  </div>

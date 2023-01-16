@@ -1,0 +1,276 @@
+
+
+<div class="container crud">
+    <div class="tableName">
+      <h1>COLLEGE <span>TEACHERS</span> </h1>
+      <button type="button" class="btn btn1 btn-primary" (click)="openTeacherModal(teachertemplate,'null')">Add More</button>
+    </div>
+    
+     <!-- *************** Table No. 1 **************** -->
+    
+     <div class="table1">
+      <table class="table table-striped text-center ">
+        <thead>
+          <tr>
+            <th scope="col">Sr.No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr  *ngFor="let teacher of teachersData; let i = index">
+            <th scope="row">{{i + 1}}</th>
+            <td>{{teacher.name | titlecase }}</td>
+            <td>{{teacher.age}}</td>
+            <td>{{teacher.mobile}}</td>
+            <td>{{teacher.subject}}</td>
+            <td>{{teacher.salary}}</td>
+            <td>
+              <button type="button" class="btn btn2  btn-warning"  (click)="openTeacherModal(editteachertemplate,i)">Edit</button> &nbsp;&nbsp;
+              <button type="button" class="btn btn3  btn-warning"  (click)="DeleteTeacher(i)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    </div>
+    
+    
+    
+    <!-- ************************************************
+    ************* College Teachers Template Start 1 *****************
+    ***************************************************** -->
+    
+    
+    
+    
+    
+    
+    
+    <ng-template #teachertemplate>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">ADD TEACHER</h4>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="teacherClose()">
+          <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+      </div>
+    
+      <div class="tempBody">
+    
+        <div class="modal-body">
+    
+          <div class="mb-3 mt-3">
+            <label for="text" class="form-label" ><i class="fas fa-rupee-sign" style="font-size:15px"></i> &nbsp; Full Name :-</label>
+            <input type="text" class="form-control" placeholder="Enter name"   [(ngModel)]="teacherName">
+          </div>
+    
+          <div class="mb-3 mt-3">
+            <label for="text" class="form-label  mb-1"><i class='fas fa-chart-line' style='font-size:15px'></i> &nbsp; Age :-</label>
+             <select class="form-select" id="sel" name="sellist"  [(ngModel)]="teacherAge">
+              <option value="" disabled selected>Select age</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+              <option value="32">32</option>
+              <option value="33">33</option>
+              <option value="34">34</option>
+              <option value="35">35</option>
+              <option value="36">36</option>
+              <option value="37">37</option>
+              <option value="38">38</option>
+              <option value="39">39</option>
+              <option value="40">40</option>
+              <option value="41">41</option>
+              <option value="42">42</option>
+              <option value="43">43</option>
+              <option value="44">44</option>
+              <option value="45">45</option>
+              <option value="46">46</option>
+              <option value="47">47</option>
+              <option value="48">48</option>
+              <option value="49">49</option>
+              <option value="50">50</option>
+              <option value="51">51</option>
+              <option value="52">52</option>
+              <option value="53">53</option>
+              <option value="54">54</option>
+              <option value="55">55</option>
+              <option value="56">56</option>
+              <option value="57">57</option>
+              <option value="58">58</option>
+            </select>
+          </div>
+    
+          <div class="mb-3 mt-3">
+            <label for="text" class="form-label" ><i class="fa fa-phone" style="font-size:15px"></i> &nbsp; Mobile No. :-</label>
+            <input type="number" class="form-control" placeholder="Enter number"  [(ngModel)]="teacherMobile">
+          </div>
+    
+          <div class="mb-3 mt-3">
+            <label for="text" class="form-label  mb-1"><i class='fas fa-address-book' style='font-size:15px'></i> &nbsp; Subject :-</label>
+             <select class="form-select" id="sel" name="sellist"  [(ngModel)]="teachersubject">
+              <option value="" disabled selected>Choose subject</option>
+              <option value="Mathematics">Mathematics</option>
+              <option value="Science">Science</option>
+              <option value="Psychology">Psychology</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Environmental Science">Environmental Science</option>
+              <option value="Computer Science">Computer Science</option>
+            </select>
+          </div>
+    
+          <div class="mb-3 mt-3">
+            <label for="text" class="form-label" ><i class="fa fa-phone" style="font-size:15px"></i> &nbsp; Salary :-</label>
+            <input type="number" class="form-control" placeholder="Enter amount"   [(ngModel)]="teacherSalary">
+          </div>
+    
+          <div class="mb-4">
+            <button type="button" class="btn btnSubmit"    [disabled]="teacherName == '' "  (click)="submitTeacher()">Submit</button>
+          </div>
+    
+          <div class="mb-4">
+            <button type="button" class="btn btnReset"   (click)="resetTeacher()">Reset</button>
+          </div>
+      
+        </div>
+    
+      </div>
+    
+    </ng-template>
+    
+    
+    
+    
+    <!-- ************************************************
+    ************* Edit College Teachers Template Start 1 *****************
+    ***************************************************** -->
+    
+    
+    
+    
+    
+    
+    
+    <ng-template #editteachertemplate>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">EDIT TEACHER</h4>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="teacherClose()">
+          <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+      </div>
+    
+      <div class="tempBody">
+    
+        <div class="modal-body">
+    
+          <div class="mb-3 mt-3">
+            <label for="text" class="form-label" ><i class="fas fa-rupee-sign" style="font-size:15px"></i> &nbsp; Full Name :-</label>
+            <input type="text" class="form-control" placeholder="Enter name"   [(ngModel)]="teacherName">
+          </div>
+    
+          <div class="mb-3 mt-3">
+            <label for="text" class="form-label  mb-1"><i class='fas fa-chart-line' style='font-size:15px'></i> &nbsp; Age :-</label>
+             <select class="form-select" id="sel" name="sellist"  [(ngModel)]="teacherAge">
+              <option value="" disabled selected>Select age</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+              <option value="32">32</option>
+              <option value="33">33</option>
+              <option value="34">34</option>
+              <option value="35">35</option>
+              <option value="36">36</option>
+              <option value="37">37</option>
+              <option value="38">38</option>
+              <option value="39">39</option>
+              <option value="40">40</option>
+              <option value="41">41</option>
+              <option value="42">42</option>
+              <option value="43">43</option>
+              <option value="44">44</option>
+              <option value="45">45</option>
+              <option value="46">46</option>
+              <option value="47">47</option>
+              <option value="48">48</option>
+              <option value="49">49</option>
+              <option value="50">50</option>
+              <option value="51">51</option>
+              <option value="52">52</option>
+              <option value="53">53</option>
+              <option value="54">54</option>
+              <option value="55">55</option>
+              <option value="56">56</option>
+              <option value="57">57</option>
+              <option value="58">58</option>
+            </select>
+          </div>
+    
+          <div class="mb-3 mt-3">
+            <label for="text" class="form-label" ><i class="fa fa-phone" style="font-size:15px"></i> &nbsp; Mobile No. :-</label>
+            <input type="number" class="form-control" placeholder="Enter number"  [(ngModel)]="teacherMobile">
+          </div>
+    
+          <div class="mb-3 mt-3">
+            <label for="text" class="form-label  mb-1"><i class='fas fa-address-book' style='font-size:15px'></i> &nbsp; Subject :-</label>
+             <select class="form-select" id="sel" name="sellist"  [(ngModel)]="teachersubject">
+              <option value="" disabled selected>Choose subject</option>
+              <option value="Mathematics">Mathematics</option>
+              <option value="Science">Science</option>
+              <option value="Psychology">Psychology</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Environmental Science">Environmental Science</option>
+              <option value="Computer Science">Computer Science</option>
+            </select>
+          </div>
+    
+          <div class="mb-3 mt-3">
+            <label for="text" class="form-label" ><i class="fa fa-phone" style="font-size:15px"></i> &nbsp; Salary :-</label>
+            <input type="number" class="form-control" placeholder="Enter amount"   [(ngModel)]="teacherSalary">
+          </div>
+    
+          <div class="mb-4">
+            <button type="button" class="btn btnSubmit"   [disabled]="teacherName == '' "  (click)="editTeacher()">Update</button>
+          </div>
+    
+          <div class="mb-4">
+            <button type="button" class="btn btnReset" (click)="resetTeacher()">Reset</button>
+          </div>
+      
+        </div>
+    
+      </div>
+    
+    </ng-template>
+    
+
+    <div class="tagg" style="width: 86%; margin-left:108px;">
+      <hr>
+    </div>

@@ -1,0 +1,176 @@
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * Teacher Table No.1 Crud* * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+
+.crud
+{
+    margin-top: 30%;
+    margin-bottom: 5%;
+}
+
+.crud .tableName h1
+{
+    font-weight: 700;
+    font-size: 40px;
+    color: rgb(66, 66, 118);
+    margin-bottom: 2%;
+}
+
+.crud .tableName h1 span
+{
+    color: rgb(178, 79, 79);
+}
+
+.crud .tableName .btn1
+{
+    float: right;
+    margin-right: 120px;
+    margin-top: -62px;
+    font-weight: 500;
+    background-color: rgb(164, 61, 61);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.crud .tableName .btn1:hover
+{
+    color: red;
+    border-color: red;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.table1
+{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+//  * * * * * * * * * * * * * * * * * * * * * * * *  Teacher * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+.table1 .btn2
+{
+    padding: 5px 25px;
+    color: rgb(82, 82, 37);
+    background-color: white;
+    border-color: yellow;
+    font-weight: 500;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.table1 .btn3
+{
+    padding: 5px 25px;
+    color: red;
+    background-color: white;
+    border-color: rgb(201, 69, 69);
+    font-weight: 500;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.modal-title
+{
+    margin-left: 100px;
+    font-size: 30px;
+    font-weight: 800;
+    color: rgb(24, 24, 95);
+}
+
+.tempBody .form-label
+{
+    margin-left: 45px;
+    font-size: 17px;
+    font-weight: 600;
+    color: rgb(25, 25, 115);
+}
+
+.tempBody .form-control
+{
+    width: 80%;
+    padding: 13px 12px;
+    margin-left: 44px;
+    border: 1px solid rgb(6, 6, 41);
+}
+
+.tempBody .form-select
+{
+    width: 80%;
+    padding: 13px 12px;
+    margin-left: 44px;
+    border: 1px solid rgb(6, 6, 41);
+}
+
+.tempBody .btnReset
+{
+    color: white;
+    // background-color: rgb(94, 94, 150);
+    background-color: rgb(72, 103, 95);
+    float: right;
+    margin-right: 10px;
+    margin-top: 16px;
+    margin-bottom: 6%;
+    padding: 10px 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.tempBody .btnSubmit
+{
+    color: white;
+    // background-color: rgb(96, 140, 128);
+    background-color: rgb(94, 94, 150);
+    float: right;
+    margin-right: 45px;
+    margin-top: 5%;
+    padding: 10px 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * Teacher Table No.1 Crud* * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+
+.crud1
+{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.crud1 .tableName h1
+{
+    font-weight: 700;
+    font-size: 40px;
+    color: rgb(66, 66, 118);
+    margin-bottom: 2%;
+    margin-top: 35%;
+}
+
+.crud1 .tableName h1 span
+{
+    color: rgb(178, 79, 79);
+}
+
+.crud1 .tableName .btn1
+{
+    float: right;
+    margin-right: 120px;
+    margin-top: -62px;
+    font-weight: 500;
+    background-color: rgb(164, 61, 61);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.crud1 .tableName .btn1:hover
+{
+    color: red;
+    border-color: red;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

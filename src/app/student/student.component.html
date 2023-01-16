@@ -1,0 +1,197 @@
+
+<div class="container crud1">
+    <div class="tableName">
+      <h1>COLLEGE <span>STUDENTS</span> </h1>
+      <button type="button" class="btn btn1 btn-primary" (click)="openStudentModal(Studenttemplate,'null')">Add More</button>
+    </div>
+  
+  
+     <!-- *************** Table No. 2 **************** -->
+  
+   <div class="table1">
+    <table class="table table-striped text-center ">
+      <thead>
+        <tr>
+          <th scope="col">Sr.No</th>
+          <th scope="col">Name</th>
+          <th scope="col">Year</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Engineering Branch</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <tr  *ngFor="let student of StudentData; let i = index">
+          <th scope="row">{{i + 1}}</th>
+          <td>{{student.name | titlecase }}</td>
+          <td>{{student.year}}</td>
+          <td>{{student.mobile}}</td>
+          <td>{{student.department}}</td>
+          <td>
+            <button type="button" class="btn btn2  btn-warning"  (click)="openStudentModal(editStudenttemplate,i)">Edit</button> &nbsp;&nbsp;
+            <button type="button" class="btn btn3  btn-warning"  (click)="DeleteStudent(i)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  </div>
+  
+  
+  
+  <!-- ************************************************
+  ************* College Student Template Start  *****************
+  ***************************************************** -->
+  
+  
+  
+  
+  <ng-template #Studenttemplate>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">ADD STUDENT</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="StudentClose()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+  
+    <div class="tempBody">
+  
+      <div class="modal-body">
+  
+        <div class="mb-3 mt-3">
+          <label for="text" class="form-label" ><i class="fas fa-rupee-sign" style="font-size:15px"></i> &nbsp; Full Name :-</label>
+          <input type="text" class="form-control" placeholder="Enter name"   [(ngModel)]="studenName">
+        </div>
+  
+        <div class="mb-3 mt-3">
+          <label for="text" class="form-label  mb-1"><i class='fas fa-chart-line' style='font-size:15px'></i> &nbsp; Year :-</label>
+           <select class="form-select" id="sel" name="sellist"  [(ngModel)]="studenYear">
+            <option value="" disabled selected>Select age</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
+  
+        <div class="mb-3 mt-3">
+          <label for="text" class="form-label" ><i class="fa fa-phone" style="font-size:15px"></i> &nbsp; Mobile No. :-</label>
+          <input type="number" class="form-control" placeholder="Enter number"  [(ngModel)]="studenMobile">
+        </div>
+  
+        <div class="mb-3 mt-3">
+          <label for="text" class="form-label  mb-1"><i class='fas fa-address-book' style='font-size:15px'></i> &nbsp; Department :-</label>
+           <select class="form-select" id="sel" name="sellist"  [(ngModel)]="studenDepartment">
+            <option value="" disabled selected>Choose department</option>
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+            <option value="Civil Engineering">Civil Engineering</option>
+            <option value="Electrical Engineering">Electrical Engineering</option>
+            <option value="Chemical Engineering">Chemical Engineering</option>
+            <option value="Aerospace Engineering">Aerospace Engineering</option>
+            <option value="Computer Engineering">Computer Engineering</option>
+          </select>
+        </div>
+  
+  
+        <div class="mb-4">
+          <button type="button" class="btn btnSubmit"    [disabled]="studenName == '' "  (click)="submitStudent()">Submit</button>
+        </div>
+  
+        <div class="mb-4">
+          <button type="button" class="btn btnReset"   (click)="resetStudent()">Reset</button>
+        </div>
+    
+      </div>
+  
+    </div>
+  
+  </ng-template>
+  
+  
+  
+  
+  <!-- ************************************************
+  ************* Edit College Student Template Start  *****************
+  ***************************************************** -->
+  
+  
+  
+  
+  <ng-template #editStudenttemplate>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">EDIT STUDENT</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="StudentClose()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+  
+    <div class="tempBody">
+  
+      <div class="modal-body">
+  
+        <div class="mb-3 mt-3">
+          <label for="text" class="form-label" ><i class="fas fa-rupee-sign" style="font-size:15px"></i> &nbsp; Full Name :-</label>
+          <input type="text" class="form-control" placeholder="Enter name"   [(ngModel)]="studenName">
+        </div>
+  
+        <div class="mb-3 mt-3">
+          <label for="text" class="form-label  mb-1"><i class='fas fa-chart-line' style='font-size:15px'></i> &nbsp; Year :-</label>
+           <select class="form-select" id="sel" name="sellist"  [(ngModel)]="studenYear">
+            <option value="" disabled selected>Select age</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
+  
+        <div class="mb-3 mt-3">
+          <label for="text" class="form-label" ><i class="fa fa-phone" style="font-size:15px"></i> &nbsp; Mobile No. :-</label>
+          <input type="number" class="form-control" placeholder="Enter number"  [(ngModel)]="studenMobile">
+        </div>
+  
+        <div class="mb-3 mt-3">
+          <label for="text" class="form-label  mb-1"><i class='fas fa-address-book' style='font-size:15px'></i> &nbsp; Department :-</label>
+           <select class="form-select" id="sel" name="sellist"  [(ngModel)]="studenDepartment">
+            <option value="" disabled selected>Choose department</option>
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+            <option value="Civil Engineering">Civil Engineering</option>
+            <option value="Electrical Engineering">Electrical Engineering</option>
+            <option value="Chemical Engineering">Chemical Engineering</option>
+            <option value="Aerospace Engineering">Aerospace Engineering</option>
+            <option value="Computer Engineering">Computer Engineering</option>
+          </select>
+        </div>
+  
+  
+        <div class="mb-4">
+          <button type="button" class="btn btnSubmit" [disabled]="studenName == '' "  (click)="editStudent()">Submit</button>
+        </div>
+  
+        <div class="mb-4">
+          <button type="button" class="btn btnReset" (click)="resetStudent()">Reset</button>
+        </div>
+    
+      </div>
+  
+    </div>
+  
+  </ng-template>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="tagg" style="width: 86%; margin-left:108px;">
+    <hr>
+  </div>
+  
+  
+  
+  
